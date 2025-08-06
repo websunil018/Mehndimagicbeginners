@@ -106,4 +106,25 @@
         // Observe elements for scroll animations
         document.querySelectorAll('.link-button').forEach(button => {
             observer.observe(button);
+
         });
+
+
+
+  // Function to open YouTube app
+        function openYouTubeApp(event) {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Prevent default browser action
+      event.preventDefault();
+      // Try to open in YouTube app
+      window.location.href = "vnd.youtube://user/Mehndimagicbeginners";
+
+      // Backup fallback (open in browser after delay if app fails)
+      setTimeout(() => {
+        window.location.href = "https://www.youtube.com/@Mehndimagicbeginners";
+      }, 1000);
+    }
+    // Desktop: let normal link work (opens in browser)
+  }
