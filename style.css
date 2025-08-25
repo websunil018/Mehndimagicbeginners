@@ -1,4 +1,4 @@
-:root {
+ :root {
             /* Dark Theme Only */
             --primary-peach: #D4926F;
             --soft-pink: #B87070;
@@ -242,7 +242,7 @@
         .links-section {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .link-button {
@@ -479,6 +479,18 @@
 
         .creator-link:hover::before {
             width: 100%;
+        }
+
+        /* Ripple animation for clicks */
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
         }
 
         /* Desktop/Laptop Specific Styles */
